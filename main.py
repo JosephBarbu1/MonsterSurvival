@@ -21,7 +21,7 @@ clock = pygame.time.Clock()
 #Pygame Initialization
 #-------------------------------------------------------------------------------
 pygame.init()
-pygame.display.set_caption("CloackMan")
+pygame.display.set_caption("Monster Survival")
 #-------------------------------------------------------------------------------
 
 #Window Size
@@ -39,16 +39,16 @@ animation_database = {}
 
 #Block Configuration
 #-------------------------------------------------------------------------------
-grass=blocks.transformsprites(r"C:\Users\Joseph\Desktop\Backup\cloakman-main\blocks\tile001.png")
-dirt=blocks.transformsprites(r"C:\Users\Joseph\Desktop\Backup\cloakman-main\blocks/tile013.png")
+grass=blocks.transformsprites(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\blocks\tile001.png")
+dirt=blocks.transformsprites(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\blocks\tile013.png")
 #-------------------------------------------------------------------------------
-jumpy = blocks.transformsprites2(r"C:\Users\Joseph\Desktop\Backup\cloakman-main\jumper.png")
+jumpy = blocks.transformsprites2(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\jumper.png")
 jumpy.set_colorkey((255,255,255))
 #-------------------------------------------------------------------------------
 
 #Screen Configuration
 #-------------------------------------------------------------------------------
-scene = pygame.image.load(r"C:\Users\Joseph\Desktop\Backup\cloakman-main\spritesheets/background/background.png")
+scene = pygame.image.load(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\spritesheets\background\background.png")
 screen = pygame.display.set_mode(WINDOW_SIZE,0,32)
 display = pygame.Surface((320, 140))
 true_display=pygame.transform.scale(display, WINDOW_SIZE)
@@ -56,14 +56,14 @@ font = pygame.font.SysFont(None, 24)
 screen.blit(true_display, (0,0))
 # **scaling the display to window size
 true_scene=pygame.transform.scale(scene, BACKGROUND)
-tilemap = map.load_map(r'C:\Users\Joseph\Desktop\Backup\cloakman-main\tilemap')
+tilemap = map.load_map(r'C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\tilemap')
 #-------------------------------------------------------------------------------
 
 #Initialize the player and other objects
 #-------------------------------------------------------------------------------
 rect = pygame.Rect(100,100,32,32)
 p1 = p(rect)
-jumper = e.entity((random.randint(100,160),250), jumpy)
+jumper = e.entity((random.randint(116,533),250), jumpy)
 for i in range(1):
     jumper_objects.append(jumper)
 mjumper = e.entitym()
@@ -71,10 +71,10 @@ mjumper = e.entitym()
 
 #Loading the spritesheets for Player and Enemies
 #-------------------------------------------------------------------------------
-animation_database['run'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\Backup\cloakman-main\player_animations/run',[7,7,7,7,7,7])
-animation_database['idle'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\Backup\cloakman-main\player_animations/idle',[7,7,7,7])
-animation_database['jump'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\Backup\cloakman-main\player_animations/jump',[4,4,4])
-animation_database['jumpdown'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\Backup\cloakman-main\player_animations/jumpdown',[4,4,4])
+animation_database['run'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\player_animations/run',[7,7,7,7,7,7])
+animation_database['idle'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\player_animations/idle',[7,7,7,7])
+animation_database['jump'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\player_animations/jump',[4,4,4])
+animation_database['jumpdown'] = sprites.load_animation(r'C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\player_animations/jumpdown',[4,4,4])
 #-------------------------------------------------------------------------------
 
 #Retrievess the mouse cursor position
