@@ -48,7 +48,7 @@ jumpy.set_colorkey((255,255,255))
 
 #Screen Configuration
 #-------------------------------------------------------------------------------
-scene = pygame.image.load(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\spritesheets\background\background.png")
+scene = pygame.image.load(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\spritesheets\background\background2.png")
 screen = pygame.display.set_mode(WINDOW_SIZE,0,32)
 display = pygame.Surface((320, 140))
 true_display=pygame.transform.scale(display, WINDOW_SIZE)
