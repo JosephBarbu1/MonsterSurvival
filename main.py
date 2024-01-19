@@ -67,6 +67,12 @@ jumper = e.entity((random.randint(116,533),250), jumpy)
 for i in range(1):
     jumper_objects.append(jumper)
 mjumper = e.entitym()
+
+#coins
+coin_image = pygame.image.load(r"C:\Users\Joseph\Desktop\CSE098_Project\MonsterSurvival\blocks\coin_2.png")
+coins = [pygame.Rect(100, 100, 32, 32)]
+
+
 #-------------------------------------------------------------------------------
 
 #Loading the spritesheets for Player and Enemies
@@ -95,7 +101,8 @@ def mouse_pos():
 #Returns the X and Y position of the mouse cursor in relation to game "screen"
 #and not the game window.
 #-------------------------------------------------------------------------------
-
+for c in coins:
+    screen.blit(coin_image, (c.x, c.y))
 #Game Loop
 while True:
     screen.blit(true_scene, (0,-480))
@@ -120,6 +127,7 @@ while True:
                 tile_rects.append(pygame.Rect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE))
             x += 1
         y += 1
+    
     
 # This is the coordinate/movement detection for the player [0,1]=[x,y].
     p1.player_movement = [0,0]
